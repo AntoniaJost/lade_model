@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Implementation of Mathematical Functions</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        });
+    </script>
+    <script type="text/javascript" async 
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+</head>
+<body>
+    <h1>Mathematical Functions</h1>
+
+    <h2>1. Biodiversity-Dependent Function</h2>
+    <p>The biodiversity-dependent function is given by:</p>
+    <p>$$ I = \max(0, 1 - ICC \cdot |T - z| - Id) $$</p>
+    <p>$$ H = I^\theta $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( I \) is the impact of climate change and human activity on biodiversity.</li>
+        <li>\( ICC \) is the effect of climate change on biodiversity.</li>
+        <li>\( T \) is the temperature anomaly.</li>
+        <li>\( z \) is the response lag.</li>
+        <li>\( Id \) is the direct human impacts on biodiversity.</li>
+        <li>\( \theta \) is the exponent in the biodiversity-function relationship.</li>
+    </ul>
+
+    <h2>2. Terrestrial Carbon Carrying Capacity</h2>
+    <p>The terrestrial carbon carrying capacity is given by:</p>
+    <p>$$ K = H \cdot \left( (1 + KC \cdot \log\left(\frac{ca}{ca_0}\right)) \cdot ct_0 \cdot QR^{\frac{T}{10}} - KA \cdot |T - z| \right) $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( K \) is the terrestrial carbon carrying capacity.</li>
+        <li>\( H \) is the biodiversity-dependent function.</li>
+        <li>\( KC \) is the CO2 fertilization effect.</li>
+        <li>\( ca \) is the atmospheric carbon stock.</li>
+        <li>\( ca_0 \) is the pre-industrial atmospheric carbon stock.</li>
+        <li>\( ct_0 \) is the pre-industrial terrestrial carbon stock.</li>
+        <li>\( QR \) is the temperature dependence of respiration.</li>
+        <li>\( T \) is the temperature anomaly.</li>
+        <li>\( KA \) is the terrestrial carbon storage loss due to response lag.</li>
+        <li>\( z \) is the response lag.</li>
+    </ul>
+
+    <h2>3. Terrestrial Carbon Equation</h2>
+    <p>The terrestrial carbon equation is given by:</p>
+    <p>$$ \frac{dct}{dt} = \frac{NPP_0}{ct_0} \cdot QR^{\frac{T}{10}} \cdot (K - ct) - LUC $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( ct \) is the terrestrial carbon stock.</li>
+        <li>\( NPP_0 \) is the pre-industrial net primary productivity.</li>
+        <li>\( ct_0 \) is the pre-industrial terrestrial carbon stock.</li>
+        <li>\( QR \) is the temperature dependence of respiration.</li>
+        <li>\( T \) is the temperature anomaly.</li>
+        <li>\( K \) is the terrestrial carbon carrying capacity.</li>
+        <li>\( LUC \) is the land-use emissions.</li>
+    </ul>
+
+    <h2>4. Permafrost Carbon Emissions</h2>
+    <p>The permafrost carbon emissions are given by:</p>
+    <p>$$ cp = pT \cdot \max(T, 0) $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( cp \) is the permafrost carbon emissions.</li>
+        <li>\( pT \) is the permafrost thaw temperature response.</li>
+        <li>\( T \) is the temperature anomaly.</li>
+    </ul>
+
+    <h2>5. Marine Biological Pump Partial Pressure</h2>
+    <p>The marine biological pump partial pressure is given by:</p>
+    <p>$$ p(cm, \Delta T) = ca_0 \left(\frac{cm}{cm_0}\right)^r \cdot \frac{1}{1 - DT \cdot T} $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( p(cm, \Delta T) \) is the partial pressure of CO2 in the ocean mixed layer.</li>
+        <li>\( ca_0 \) is the pre-industrial atmospheric carbon stock.</li>
+        <li>\( cm \) is the ocean mixed layer carbon stock.</li>
+        <li>\( cm_0 \) is the pre-industrial ocean mixed layer carbon stock.</li>
+        <li>\( r \) is the Revelle factor (buffer factor).</li>
+        <li>\( DT \) is the reduction of solubility with temperature.</li>
+        <li>\( T \) is the temperature anomaly.</li>
+    </ul>
+
+    <h2>6. Marine Biological Pump Efficiency</h2>
+    <p>The marine biological pump efficiency is given by:</p>
+    <p>$$ B(0, ca_0) = 13 \cdot (1 - 0.032 \cdot 0 - BTB \cdot 0) \cdot (1 - BA \cdot (ca_0 - ca_0)) $$</p>
+    <p>$$ B(\Delta T, p(cm, \Delta T)) = 13 \cdot (1 - 0.032 \cdot T - BTB \cdot T) \cdot (1 - BA \cdot (p(cm, \Delta T) - ca_0)) $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( B(0, ca_0) \) is the marine biological pump efficiency at pre-industrial conditions.</li>
+        <li>\( B(\Delta T, p(cm, \Delta T)) \) is the marine biological pump efficiency under changed conditions.</li>
+        <li>\( BTB \) is the temperature effect on the marine biological pump.</li>
+        <li>\( BA \) is the acidification effect on the marine biological pump.</li>
+        <li>\( ca_0 \) is the pre-industrial atmospheric carbon stock.</li>
+        <li>\( cm \) is the ocean mixed layer carbon stock.</li>
+        <li>\( p(cm, \Delta T) \) is the partial pressure of CO2 in the ocean mixed layer.</li>
+        <li>\( T \) is the temperature anomaly.</li>
+    </ul>
+
+    <h2>7. Ocean Mixed Layer Carbon Equation</h2>
+    <p>The ocean mixed layer carbon equation is given by:</p>
+    <p>$$ \frac{dcm}{dt} = \frac{D \cdot cm_0}{p(cm_0, 0)} (ca - p(cm, \Delta T)) + B(0, ca_0) - B(\Delta T, p(cm, \Delta T)) - w_0 \cdot (1 - w_T \cdot \Delta T) \cdot (cm - cm_0) $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( cm \) is the ocean mixed layer carbon stock.</li>
+        <li>\( D \) is the atmosphere-ocean CO2 diffusion.</li>
+        <li>\( cm_0 \) is the pre-industrial ocean mixed layer carbon stock.</li>
+        <li>\( p(cm_0, 0) \) is the partial pressure of CO2 in the ocean mixed layer at pre-industrial conditions.</li>
+        <li>\( ca \) is the atmospheric carbon stock.</li>
+        <li>\( p(cm, \Delta T) \) is the partial pressure of CO2 in the ocean mixed layer.</li>
+        <li>\( B(0, ca_0) \) is the marine biological pump efficiency at pre-industrial conditions.</li>
+        <li>\( B(\Delta T, p(cm, \Delta T)) \) is the marine biological pump efficiency under changed conditions.</li>
+        <li>\( w_0 \) is the solubility pump rate.</li>
+        <li>\( w_T \) is the weakening of overturning circulation with climate change.</li>
+        <li>\( \Delta T \) is the temperature anomaly.</li>
+    </ul>
+
+    <h2>8. Change in System Carbon Equation</h2>
+    <p>The change in system carbon equation is given by:</p>
+    <p>$$ \frac{dcs}{dt} = e(t) - w_0 \cdot (1 - w_T \cdot \Delta T) \cdot (cm - cm_0) - (B(\Delta T, p(cm, \Delta T)) - B(0, ca_0)) $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( cs \) is the change in system carbon.</li>
+        <li>\( e(t) \) is the emissions of fossil carbon into the atmosphere.</li>
+        <li>\( w_0 \) is the solubility pump rate.</li>
+        <li>\( w_T \) is the weakening of overturning circulation with climate change.</li>
+        <li>\( \Delta T \) is the temperature anomaly.</li>
+        <li>\( cm \) is the ocean mixed layer carbon stock.</li>
+        <li>\( cm_0 \) is the pre-industrial ocean mixed layer carbon stock.</li>
+        <li>\( B(0, ca_0) \) is the marine biological pump efficiency at pre-industrial conditions.</li>
+        <li>\( B(\Delta T, p(cm, \Delta T)) \) is the marine biological pump efficiency under changed conditions.</li>
+    </ul>
+
+    <h2>9. Atmospheric Carbon Equation</h2>
+    <p>The atmospheric carbon equation based on conservation is given by:</p>
+    <p>$$ ca + ct + cm = ca_0 + ct_0 + cm_0 + cs + cp $$</p>
+    <p>$$ \frac{dca}{dt} = \frac{dcs}{dt} + ca_{conservation} - ca $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( ca \) is the atmospheric carbon stock.</li>
+        <li>\( ct \) is the terrestrial carbon stock.</li>
+        <li>\( cm \) is the ocean mixed layer carbon stock.</li>
+        <li>\( ca_0 \) is the pre-industrial atmospheric carbon stock.</li>
+        <li>\( ct_0 \) is the pre-industrial terrestrial carbon stock.</li>
+        <li>\( cm_0 \) is the pre-industrial ocean mixed layer carbon stock.</li>
+        <li>\( cs \) is the change in system carbon.</li>
+        <li>\( cp \) is the permafrost carbon emissions.</li>
+        <li>\( ca_{conservation} = ca_0 + ct_0 + cm_0 + cs + cp - (ct + cm) \) is the conservation term.</li>
+    </ul>
+
+    <h2>10. Temperature Anomaly Equation</h2>
+    <p>The temperature anomaly equation is given by:</p>
+    <p>$$ \frac{dT}{dt} = \frac{1}{\tau} \left( \frac{\lambda_{\text{climate}}}{\log 2} \log \left(\frac{ca}{ca_0}\right) - T \right) $$</p>
+    <p>where:</p>
+    <ul>
+        <li>\( T \) is the temperature anomaly.</li>
+        <li>\( \tau \) is the climate lag.</li>
+        <li>\( \lambda_{\text{climate}} \) is the transient climate sensitivity.</li>
+        <li>\( ca \) is the atmospheric carbon stock.</li>
+        <li>\( ca_0 \) is the pre-industrial atmospheric carbon stock.</li>
+    </ul>
+
+</body>
+</html>
